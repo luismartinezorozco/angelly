@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANGELLY PHOTOGRAPH</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.image2url.com/r2/default/images/1776970263710-28ee9854-6a40-442d-96a7-d6a739097ce1.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Config for Tailwind to match aesthetics -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#111111',
+                            card: '#1a1a1a',
+                            hover: '#f3f4f6'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling and base styling */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .link-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.1), 0 8px 10px -6px rgba(255, 255, 255, 0.1);
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark min-h-screen text-white font-sans flex items-center justify-center p-4 relative overflow-hidden bg-pattern">
+
+    <!-- Decorative background glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-md z-10 animate-fade-in-up">
+        
+        <!-- Profile Section -->
+        <div class="text-center mb-10">
+            <!-- Logo Container -->
+            <div class="relative inline-block mb-6">
+                <div class="absolute inset-0 bg-white rounded-3xl blur-md opacity-20"></div>
+                <img 
+                    src="https://www.image2url.com/r2/default/images/1776970263710-28ee9854-6a40-442d-96a7-d6a739097ce1.png" 
+                    alt="Logo Angelly Photograph" 
+                    class="relative w-36 h-36 object-contain bg-white rounded-3xl p-3 shadow-xl border border-gray-200"
+                >
+            </div>
+            
+            <h1 class="text-3xl font-bold tracking-wider mb-2">ANGELLY</h1>
+            <p class="text-gray-400 uppercase tracking-widest text-sm font-semibold">Fotografía Profesional</p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="space-y-4">
+            
+            <!-- 1. Teléfono -->
+            <a href="tel:3015712394" class="link-card flex items-center justify-between bg-brand-card border border-gray-800 p-5 rounded-2xl group hover:bg-white hover:text-black">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 text-white group-hover:bg-black group-hover:text-white transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-lg">Llamar Ahora</span>
+                </div>
+                <i class="fas fa-chevron-right text-gray-500 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
+            </a>
+
+            <!-- 2. WhatsApp -->
+            <a href="https://wa.me/573015712394" target="_blank" rel="noopener noreferrer" class="link-card flex items-center justify-between bg-brand-card border border-gray-800 p-5 rounded-2xl group hover:bg-white hover:text-black">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 text-white group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </div>
+                    <span class="font-semibold text-lg">WhatsApp</span>
+                </div>
+                <i class="fas fa-chevron-right text-gray-500 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
+            </a>
+
+            <!-- 3. Instagram -->
+            <a href="https://www.instagram.com/angellysantiagoc?igsh=MTRzcTJndzc3dmFjbA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="link-card flex items-center justify-between bg-brand-card border border-gray-800 p-5 rounded-2xl group hover:bg-white hover:text-black">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 text-white group-hover:bg-gradient-to-tr group-hover:from-[#F56040] group-hover:to-[#C13584] group-hover:text-white transition-all">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </div>
+                    <span class="font-semibold text-lg">Instagram</span>
+                </div>
+                <i class="fas fa-chevron-right text-gray-500 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center">
+            <p class="text-xs text-gray-600">
+                &copy; <script>document.write(new Date().getFullYear())</script> Angelly Photograph. Todos los derechos reservados.
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
