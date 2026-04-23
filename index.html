@@ -53,80 +53,88 @@
         
         .link-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.1), 0 8px 10px -6px rgba(255, 255, 255, 0.1);
-        }
-
-        .bg-pattern {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
+            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15), 0 8px 10px -6px rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="bg-brand-dark min-h-screen text-white font-sans flex items-center justify-center p-4 relative overflow-hidden bg-pattern">
+<body class="bg-black min-h-[100dvh] text-white font-sans flex flex-col items-center p-4 relative overflow-x-hidden overflow-y-auto">
+
+    <!-- Ambient Background (Fills empty space with a blurred version of the image) -->
+    <div class="fixed inset-0 z-[-3] bg-cover bg-center bg-no-repeat blur-2xl opacity-40" style="background-image: url('https://i.ibb.co/23bz4RJ2/Gemini-Generated-Image-7v80dy7v80dy7v80.png');"></div>
+
+    <!-- Main Image (Contained so the model is fully visible without cropping) -->
+    <div class="fixed inset-0 z-[-2] bg-contain bg-center bg-no-repeat" style="background-image: url('https://i.ibb.co/23bz4RJ2/Gemini-Generated-Image-7v80dy7v80dy7v80.png');"></div>
+
+    <!-- Dark Gradient Overlay (Transparent at the top to show the face, darker at the bottom for readability) -->
+    <div class="fixed inset-0 z-[-1] bg-gradient-to-b from-transparent via-black/50 to-black/95"></div>
 
     <!-- Decorative background glow -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="fixed top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Spacer: This ensures the top 40% of the screen is empty so the model's face is visible -->
+    <div class="w-full flex-grow min-h-[40vh]"></div>
 
     <!-- Main Container -->
-    <main class="w-full max-w-md z-10 animate-fade-in-up">
+    <main class="w-full max-w-md z-10 animate-fade-in-up pb-8 mt-4">
         
         <!-- Profile Section -->
-        <div class="text-center mb-10">
+        <div class="text-center mb-8">
             <!-- Logo Container -->
-            <div class="relative inline-block mb-6">
+            <div class="relative inline-block mb-5">
                 <div class="absolute inset-0 bg-white rounded-3xl blur-md opacity-20"></div>
+                <!-- Logo size reduced slightly (w-28 h-28 instead of w-36) -->
                 <img 
                     src="https://www.image2url.com/r2/default/images/1776970263710-28ee9854-6a40-442d-96a7-d6a739097ce1.png" 
                     alt="Logo Angelly Photograph" 
-                    class="relative w-36 h-36 object-contain bg-white rounded-3xl p-3 shadow-xl border border-gray-200"
+                    class="relative w-28 h-28 object-contain bg-white rounded-3xl p-3 shadow-xl border border-gray-200"
                 >
             </div>
             
-            <h1 class="text-3xl font-bold tracking-wider mb-2">ANGELLY</h1>
-            <p class="text-gray-400 uppercase tracking-widest text-sm font-semibold">Audiovisual Creator and Producer</p>
+            <h1 class="text-3xl font-bold tracking-wider mb-2 drop-shadow-lg">ANGELLY</h1>
+            <p class="text-gray-300 uppercase tracking-widest text-sm font-semibold drop-shadow-md">Audiovisual Creator and Producer</p>
         </div>
 
         <!-- Links Section -->
         <div class="space-y-4">
             
             <!-- 1. Teléfono -->
-            <a href="tel:3015712394" class="link-card flex items-center justify-between bg-brand-card border border-gray-800 p-5 rounded-2xl group hover:bg-white hover:text-black">
+            <a href="tel:3015712394" class="link-card flex items-center justify-between bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded-2xl group hover:bg-white/95 hover:text-black">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 text-white group-hover:bg-black group-hover:text-white transition-colors">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white group-hover:bg-black group-hover:text-white transition-colors">
                         <i class="fas fa-phone text-xl"></i>
                     </div>
                     <span class="font-semibold text-lg">Llamar Ahora</span>
                 </div>
-                <i class="fas fa-chevron-right text-gray-500 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
+                <i class="fas fa-chevron-right text-gray-400 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
             </a>
 
             <!-- 2. WhatsApp -->
-            <a href="https://wa.me/573015712394" target="_blank" rel="noopener noreferrer" class="link-card flex items-center justify-between bg-brand-card border border-gray-800 p-5 rounded-2xl group hover:bg-white hover:text-black">
+            <a href="https://wa.me/573015712394" target="_blank" rel="noopener noreferrer" class="link-card flex items-center justify-between bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded-2xl group hover:bg-white/95 hover:text-black">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 text-white group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white group-hover:bg-[#25D366] group-hover:text-white transition-colors">
                         <i class="fab fa-whatsapp text-2xl"></i>
                     </div>
                     <span class="font-semibold text-lg">WhatsApp</span>
                 </div>
-                <i class="fas fa-chevron-right text-gray-500 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
+                <i class="fas fa-chevron-right text-gray-400 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
             </a>
 
             <!-- 3. Instagram -->
-            <a href="https://www.instagram.com/angellysantiagoc?igsh=MTRzcTJndzc3dmFjbA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="link-card flex items-center justify-between bg-brand-card border border-gray-800 p-5 rounded-2xl group hover:bg-white hover:text-black">
+            <a href="https://www.instagram.com/angellysantiagoc?igsh=MTRzcTJndzc3dmFjbA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="link-card flex items-center justify-between bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded-2xl group hover:bg-white/95 hover:text-black">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 text-white group-hover:bg-gradient-to-tr group-hover:from-[#F56040] group-hover:to-[#C13584] group-hover:text-white transition-all">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white group-hover:bg-gradient-to-tr group-hover:from-[#F56040] group-hover:to-[#C13584] group-hover:text-white transition-all">
                         <i class="fab fa-instagram text-2xl"></i>
                     </div>
                     <span class="font-semibold text-lg">Instagram</span>
                 </div>
-                <i class="fas fa-chevron-right text-gray-500 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
+                <i class="fas fa-chevron-right text-gray-400 group-hover:text-black opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0"></i>
             </a>
 
         </div>
 
         <!-- Footer -->
         <footer class="mt-12 text-center">
-            <p class="text-xs text-gray-600">
+            <p class="text-xs text-white/60">
                 &copy; <script>document.write(new Date().getFullYear())</script> Angelly Photograph. Todos los derechos reservados.
             </p>
         </footer>
